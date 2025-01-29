@@ -8,6 +8,6 @@ RUN apk update \
  && apk add curl alpine-sdk \
  && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-RUN PATH="$HOME/.cargo/bin:$PATH" cargo install cross --force
+RUN PATH="$HOME/.cargo/bin:$PATH" cargo install cross --force --git https://github.com/cross-rs/cross
 
 ENV PATH=/root/.cargo/bin:${PATH}
